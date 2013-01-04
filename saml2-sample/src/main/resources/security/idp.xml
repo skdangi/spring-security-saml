@@ -1,40 +1,99 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<EntityDescriptor entityID="http://localhost:8080/opensso" xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
-    <IDPSSODescriptor WantAuthnRequestsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
-        <KeyDescriptor use="signing">
-            <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+<?xml version="1.0" encoding="UTF-8"?>
+<EntityDescriptor xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:shibmd="urn:mace:shibboleth:metadata:1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" entityID="https://idp.fidelis-saml.com/idp/shibboleth">
+
+    <IDPSSODescriptor protocolSupportEnumeration="urn:mace:shibboleth:1.0 urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol">
+
+        <Extensions>
+            <shibmd:Scope regexp="false">fidelis-saml.com</shibmd:Scope>
+        </Extensions>
+
+        <KeyDescriptor>
+            <ds:KeyInfo>
                 <ds:X509Data>
                     <ds:X509Certificate>
-MIICQDCCAakCBEeNB0swDQYJKoZIhvcNAQEEBQAwZzELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNh
-bGlmb3JuaWExFDASBgNVBAcTC1NhbnRhIENsYXJhMQwwCgYDVQQKEwNTdW4xEDAOBgNVBAsTB09w
-ZW5TU08xDTALBgNVBAMTBHRlc3QwHhcNMDgwMTE1MTkxOTM5WhcNMTgwMTEyMTkxOTM5WjBnMQsw
-CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEUMBIGA1UEBxMLU2FudGEgQ2xhcmExDDAK
-BgNVBAoTA1N1bjEQMA4GA1UECxMHT3BlblNTTzENMAsGA1UEAxMEdGVzdDCBnzANBgkqhkiG9w0B
-AQEFAAOBjQAwgYkCgYEArSQc/U75GB2AtKhbGS5piiLkmJzqEsp64rDxbMJ+xDrye0EN/q1U5Of+
-RkDsaN/igkAvV1cuXEgTL6RlafFPcUX7QxDhZBhsYF9pbwtMzi4A4su9hnxIhURebGEmxKW9qJNY
-Js0Vo5+IgjxuEWnjnnVgHTs1+mq5QYTA7E6ZyL8CAwEAATANBgkqhkiG9w0BAQQFAAOBgQB3Pw/U
-QzPKTPTYi9upbFXlrAKMwtFf2OW4yvGWWvlcwcNSZJmTJ8ARvVYOMEVNbsT4OFcfu2/PeYoAdiDA
-cGy/F2Zuj8XJJpuQRSE6PtQqBuDEHjjmOQJ0rV/r8mO1ZCtHRhpZ5zYRjhRC9eCbjx9VrFax0JDC
-/FfwWigmrW0Y0Q==
+
+MIIDOzCCAiOgAwIBAgIUC0mJiH0W8s5lmblFyRLca/gIIOMwDQYJKoZIhvcNAQEF
+BQAwHzEdMBsGA1UEAxMUaWRwLmZpZGVsaXMtc2FtbC5jb20wHhcNMTMwMTAzMDgz
+MzM0WhcNMzMwMTAzMDgzMzM0WjAfMR0wGwYDVQQDExRpZHAuZmlkZWxpcy1zYW1s
+LmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAIclrH38qfCwyapK
+h3qt68a8O84gyw2l2SUcWO1y0EuW4kviDEFxrWrEHjyL1nC/F7s7gTbZZZgJ70FS
+89o7uKFNRUNcO+uqT3fHA95m9uCkbcml4gbfS8Es6fUE+lTqBM8M/W8WNmiIPZIQ
+jm+5xIHLEUF9GIglg9/0brKPZvc+odK80iWdzH9LMid/vG4WE34p3afL7QgDVYwJ
+44z0UU5szy5TfEo8CHJl6z2P7jKrit/aFhJ5inKye24PelH5eYAK27UhHmub6O0h
+RM7qHZxNS1Dl8wV9uNcC2CZwi3V98xPYILpILVmJKjKraUtpgsN3aEuzQC/57wXQ
+Yo+iEE0CAwEAAaNvMG0wTAYDVR0RBEUwQ4IUaWRwLmZpZGVsaXMtc2FtbC5jb22G
+K2h0dHBzOi8vaWRwLmZpZGVsaXMtc2FtbC5jb20vaWRwL3NoaWJib2xldGgwHQYD
+VR0OBBYEFDfvQIiYHgxZm0u6yX408gbzq89IMA0GCSqGSIb3DQEBBQUAA4IBAQAH
+1TJ5PeBrcAplTPG6KCkJVlZ6bL+cg0PBdMW/2DTiOe0Xb48CQd9Qe8nqIAC+DqOH
+GgFo7nylPykFxQ42u+PtYgOldPpOGJKLTF/M1Mn9AYdTNl/bTWbKpTOEzmrlkBlj
+IKDuv+uY47Dm259a3NeKX4VzwSqqIzM1L0V+sFQQ0KzoN5BbzD2he5WhragP6o6k
+NLK/torefLshOAe9VWCHGp0u8kysvUIcDg+PeZpxrRlsGXNagLS3FJ5ML3YK79JZ
+fgub0+KkKoSR2HXYrkpUSUDpOTYwIHVEw3kwJefiIqfMXapQ3mxy0B3KXJt52tIo
+FjOmhbP5KmKo8Q6mSp/m
+
                     </ds:X509Certificate>
                 </ds:X509Data>
             </ds:KeyInfo>
         </KeyDescriptor>
-        <ArtifactResolutionService index="0" isDefault="true" Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="http://localhost:8080/opensso/ArtifactResolver/metaAlias/idp"/>
-        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://localhost:8080/opensso/IDPSloRedirect/metaAlias/idp" ResponseLocation="http://localhost:8080/opensso/IDPSloRedirect/metaAlias/idp"/>
-        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="http://localhost:8080/opensso/IDPSloPOST/metaAlias/idp" ResponseLocation="http://localhost:8080/opensso/IDPSloPOST/metaAlias/idp"/>
-        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="http://localhost:8080/opensso/IDPSloSoap/metaAlias/idp"/>
-        <ManageNameIDService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://localhost:8080/opensso/IDPMniRedirect/metaAlias/idp" ResponseLocation="http://localhost:8080/opensso/IDPMniRedirect/metaAlias/idp"/>
-        <ManageNameIDService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="http://localhost:8080/opensso/IDPMniPOST/metaAlias/idp" ResponseLocation="http://localhost:8080/opensso/IDPMniPOST/metaAlias/idp"/>
-        <ManageNameIDService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="http://localhost:8080/opensso/IDPMniSoap/metaAlias/idp"/>
-        <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</NameIDFormat>
+        
+        <ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding" Location="https://idp.fidelis-saml.com:8443/idp/profile/SAML1/SOAP/ArtifactResolution" index="1"/>
+
+        <ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://idp.fidelis-saml.com:8443/idp/profile/SAML2/SOAP/ArtifactResolution" index="2"/>
+                                   
+        <NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>
         <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
-        <NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</NameIDFormat>
-        <NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</NameIDFormat>
-        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://localhost:8080/opensso/SSORedirect/metaAlias/idp"/>
-        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="http://localhost:8080/opensso/SSOSoap/metaAlias/idp"/>
-        <NameIDMappingService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="http://localhost:8080/opensso/NIMSoap/metaAlias/idp"/>
-        <AssertionIDRequestService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="http://localhost:8080/opensso/AIDReqSoap/IDPRole/metaAlias/idp"/>
-        <AssertionIDRequestService Binding="urn:oasis:names:tc:SAML:2.0:bindings:URI" Location="http://localhost:8080/opensso/AIDReqUri/IDPRole/metaAlias/idp"/>
+
+        <SingleSignOnService Binding="urn:mace:shibboleth:1.0:profiles:AuthnRequest" Location="https://idp.fidelis-saml.com/idp/profile/Shibboleth/SSO"/>
+        
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idp.fidelis-saml.com/idp/profile/SAML2/POST/SSO"/>
+
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" Location="https://idp.fidelis-saml.com/idp/profile/SAML2/POST-SimpleSign/SSO"/>
+        
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idp.fidelis-saml.com/idp/profile/SAML2/Redirect/SSO"/>
     </IDPSSODescriptor>
+
+    <AttributeAuthorityDescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol">
+
+        <Extensions>
+            <shibmd:Scope regexp="false">fidelis-saml.com</shibmd:Scope>
+        </Extensions>
+
+        <KeyDescriptor>
+            <ds:KeyInfo>
+                <ds:X509Data>
+                    <ds:X509Certificate>
+
+MIIDOzCCAiOgAwIBAgIUC0mJiH0W8s5lmblFyRLca/gIIOMwDQYJKoZIhvcNAQEF
+BQAwHzEdMBsGA1UEAxMUaWRwLmZpZGVsaXMtc2FtbC5jb20wHhcNMTMwMTAzMDgz
+MzM0WhcNMzMwMTAzMDgzMzM0WjAfMR0wGwYDVQQDExRpZHAuZmlkZWxpcy1zYW1s
+LmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAIclrH38qfCwyapK
+h3qt68a8O84gyw2l2SUcWO1y0EuW4kviDEFxrWrEHjyL1nC/F7s7gTbZZZgJ70FS
+89o7uKFNRUNcO+uqT3fHA95m9uCkbcml4gbfS8Es6fUE+lTqBM8M/W8WNmiIPZIQ
+jm+5xIHLEUF9GIglg9/0brKPZvc+odK80iWdzH9LMid/vG4WE34p3afL7QgDVYwJ
+44z0UU5szy5TfEo8CHJl6z2P7jKrit/aFhJ5inKye24PelH5eYAK27UhHmub6O0h
+RM7qHZxNS1Dl8wV9uNcC2CZwi3V98xPYILpILVmJKjKraUtpgsN3aEuzQC/57wXQ
+Yo+iEE0CAwEAAaNvMG0wTAYDVR0RBEUwQ4IUaWRwLmZpZGVsaXMtc2FtbC5jb22G
+K2h0dHBzOi8vaWRwLmZpZGVsaXMtc2FtbC5jb20vaWRwL3NoaWJib2xldGgwHQYD
+VR0OBBYEFDfvQIiYHgxZm0u6yX408gbzq89IMA0GCSqGSIb3DQEBBQUAA4IBAQAH
+1TJ5PeBrcAplTPG6KCkJVlZ6bL+cg0PBdMW/2DTiOe0Xb48CQd9Qe8nqIAC+DqOH
+GgFo7nylPykFxQ42u+PtYgOldPpOGJKLTF/M1Mn9AYdTNl/bTWbKpTOEzmrlkBlj
+IKDuv+uY47Dm259a3NeKX4VzwSqqIzM1L0V+sFQQ0KzoN5BbzD2he5WhragP6o6k
+NLK/torefLshOAe9VWCHGp0u8kysvUIcDg+PeZpxrRlsGXNagLS3FJ5ML3YK79JZ
+fgub0+KkKoSR2HXYrkpUSUDpOTYwIHVEw3kwJefiIqfMXapQ3mxy0B3KXJt52tIo
+FjOmhbP5KmKo8Q6mSp/m
+
+                    </ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+
+        <AttributeService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding" Location="https://idp.fidelis-saml.com:8443/idp/profile/SAML1/SOAP/AttributeQuery"/>
+        
+        <AttributeService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://idp.fidelis-saml.com:8443/idp/profile/SAML2/SOAP/AttributeQuery"/>
+        
+        <NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>
+        <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+        
+    </AttributeAuthorityDescriptor>
+    
 </EntityDescriptor>
